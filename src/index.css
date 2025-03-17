@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  min-height: 100%;
+  height: 100vh;
+  overflow-y: auto;
+
+  @apply font-blink-text bg-blinkNeutral50 blink-text-primary;
+}
+
+@layer components {
+  .blink-double-focus-ring {
+    @apply focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-blinkNeutral50 focus-visible:ring-blinkNeutral900;
+    @apply dark:focus-visible:ring-offset-blinkGray900 dark:focus-visible:ring-blinkNeutral50;
+  }
+
+  /**
+    * Text color combinations
+   */
+  .blink-text-primary {
+    @apply text-blinkNeutral900 dark:text-blinkNeutral50;
+  }
+
+  .blink-text-inverse {
+    @apply text-blinkNeutral50 dark:text-blinkNeutral900;
+  }
+
+  .blink-text-secondary {
+    @apply text-blinkNeutral700 dark:text-blinkNeutral300;
+  }
+
+  .blink-text-subdued {
+    @apply text-blinkNeutral500 dark:text-blinkGray400;
+  }
+
+  .blink-text-body {
+    @apply text-blinkGreen900b dark:text-blinkNeutral100;
+  }
+
+  .blink-text-disabled {
+    @apply text-blinkGray300 dark:text-blinkGray600;
+  }
+
+  .blink-text-destructive {
+    @apply text-blinkCoral400 dark:text-blinkCoral300;
+  }
+
+  /**
+    * Background color combinations
+   */
+  .blink-surface-background {
+    @apply bg-blinkNeutral50 dark:bg-blinkNeutral900;
+  }
+
+  .blink-surface-default {
+    @apply bg-blinkNeutral50 dark:bg-blinkNeutral800;
+  }
+
+  .blink-surface-inverse {
+    @apply bg-blinkNeutral800 dark:bg-blinkNeutral50;
+  }
+
+  .blink-surface-light {
+    @apply bg-blinkGreen50 dark:bg-blinkGray900;
+  }
+
+  .blink-surface-strong {
+    @apply bg-blinkGray300 dark:bg-blinkNeutral900;
+  }
+
+  .blink-surface-on-strong {
+    @apply bg-blinkNeutral50 dark:bg-blinkGray700;
+  }
+
+  /**
+    * Border color combinations
+   */
+  .blink-border-container-white {
+    @apply border-blinkGray100 dark:border-blinkNeutral900;
+  }
+
+  .blink-border-on-color {
+    @apply border-blinkGray500 dark:border-blinkNeutral900;
+  }
+}
+
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+*:focus-visible {
+  @apply blink-double-focus-ring;
+}

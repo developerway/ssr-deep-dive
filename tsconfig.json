@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "alwaysStrict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "useUnknownInCatchVariables": false,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@fe/*": ["./frontend/*"]
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "target": "ES2017"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".next"],
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "commonjs",
+      "jsx": "react-jsx"
+    },
+    "require": ["tsconfig-paths/register"]
+  }
+}
